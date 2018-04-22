@@ -7,16 +7,21 @@
 		<c:choose>
 			<c:when test="${message != null}">
 
-				<h2>id : ${message.id} の詳細ページ</h2>
+			<h2>id : ${message.id} の詳細ページ</h2>
 
-				<p>
-					タスク：
-					<c:out value="${message.content}" />
-				</p>
+			<table>
+    			<tbody>
 
-				<p>
-					<a href="${pageContext.request.contextPath}/index">一覧に戻る</a>
-				</p>
+       			 <tr>
+            		<th>タスク</th>
+            		<td><c:out value="${message.content}" /></td>
+        		</tr>
+
+    			</tbody>
+			</table>
+
+			<p><a href="${pageContext.request.contextPath}/index">一覧に戻る</a></p>
+
 				<p>
 					<a href="${pageContext.request.contextPath}/edit?id=${message.id}">このタスクを編集する</a>
 				</p>
